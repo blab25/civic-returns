@@ -156,7 +156,15 @@ function render(){
     L.circleMarker([d.lat,d.lng],{radius:isCBA?Math.max(radius(d.p),8):radius(d.p),color:isCBA?'#ffd166':(COLORS[d.s]||'#888'),weight:isCBA?3:1,fillColor:COLORS[d.s]||'#888',fillOpacity:0.62})
      .bindPopup(`<b>${d.n||'(unnamed)'}</b>${isCBA?'<span class="cbabadge">FORMAL CBA</span>':''}<br>${d.d}<br><span style="color:${COLORS[d.s]}">&#9679;</span> ${d.s}${d.y?' &middot; '+d.y:''}<br>Power: ${fmtMW(d.p)} &middot; CapEx: ${fmt$(d.cx)}<br>${d.c?d.c+', ':''}${d.st}${d.kb?'<br><i style="color:#8b98a9">'+d.kb+'…</i>':''}`)
      .addTo(layer); });
-  document.getElementById('note').textContent=`Showing ${mapped.length.toLocaleString()} of ${f.length.toLocaleString()} filtered centers on the map; ${(f.length-mapped.length).toLocaleString()} lack coordinates (still counted in charts).`;
+  const noStatus=statusDiv.querySelectorAll('input:checked').length===0;
+  const noteEl=document.getElementById('note');
+  if(noStatus){
+    noteEl.innerHTML='<b style="color:#ffb547">No status selected.</b> Tick at least one box under <b>Status</b> in the sidebar (or click <b>Reset filters</b>) to see results.';
+  } else if(f.length===0){
+    noteEl.innerHTML='<b style="color:#ffb547">No centers match these filters.</b> Try widening the year or capacity range, or click <b>Reset filters</b>.';
+  } else {
+    noteEl.textContent=`Showing ${mapped.length.toLocaleString()} of ${f.length.toLocaleString()} filtered centers on the map; ${(f.length-mapped.length).toLocaleString()} lack coordinates (still counted in charts).`;
+  }
   const byYear={}; f.forEach(d=>{if(d.y)byYear[d.y]=(byYear[d.y]||0)+1});
   const yrs=Object.keys(byYear).map(Number).sort((a,b)=>a-b);
   makeChart('cYear',{type:'bar',data:{labels:yrs,datasets:[{data:yrs.map(y=>byYear[y]),backgroundColor:yrs.map(y=>y<=2025?'#39d98a':'#4da3ff')}]},options:{plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#8b98a9',maxRotation:0,autoSkip:true},grid:{display:false}},y:{ticks:{color:'#8b98a9'},grid:{color:'#2c3a4f'}}},maintainAspectRatio:false}});
@@ -170,6 +178,12 @@ function render(){
 }
 function syncLabels(){document.getElementById('ymnL').textContent=ymn.value;document.getElementById('ymxL').textContent=ymx.value;document.getElementById('pmnL').textContent=document.getElementById('pmn').value;}
 ['search','stateFilter','inclNoYear','inclNoPower','pmn','onlyCBA','onlyBen'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{syncLabels();render();}));
+// If a benefits filter is switched on while no status is selected, re-enable all statuses so results are visible.
+['onlyCBA','onlyBen'].forEach(id=>document.getElementById(id).addEventListener('change',e=>{
+  if(e.target.checked && statusDiv.querySelectorAll('input:checked').length===0){
+    statusDiv.querySelectorAll('input').forEach(i=>i.checked=true); render();
+  }
+}));
 statusDiv.addEventListener('change',render);
 ymn.addEventListener('input',()=>{if(+ymn.value>+ymx.value)ymx.value=ymn.value;syncLabels();render();});
 ymx.addEventListener('input',()=>{if(+ymx.value<+ymn.value)ymn.value=ymx.value;syncLabels();render();});
