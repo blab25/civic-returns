@@ -29,7 +29,7 @@ This dataset documents **1,185 US data center projects** across 44 states — th
 
 The dataset is free to use for any purpose with attribution (CC BY 4.0). Suggested citation:
 
-> Civic Returns, *US Data Centers & Community Benefits Dataset* (2026). https://github.com/[your-username]/civic-returns
+> Civic Returns, *US Data Centers & Community Benefits Dataset* (2026). https://github.com/[blab25]/civic-returns
 
 Key conventions to understand before analysis (full details in the data dictionary):
 
