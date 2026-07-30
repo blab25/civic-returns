@@ -84,11 +84,11 @@ footer a{color:var(--accent)}
     <div class="fgroup"><h3>Operating year</h3>
       <div class="rangerow"><span>From <b id="ymnL"></b></span></div><input type="range" id="ymn"/>
       <div class="rangerow"><span>To <b id="ymxL"></b></span></div><input type="range" id="ymx"/>
-      <label class="chk" style="margin-top:6px"><input type="checkbox" id="inclNoYear" checked/> Include unknown year</label>
+      <label class="chk" style="margin-top:6px"><input type="checkbox" id="inclNoYear" checked/> Include projects with no year</label>
     </div>
     <div class="fgroup"><h3>Min power capacity</h3>
       <div class="rangerow"><span><b id="pmnL"></b></span><span id="pmnCount" style="color:var(--muted)"></span></div><input type="range" id="pmn" min="0" max="14" value="0" step="1"/>
-      <label class="chk" style="margin-top:6px"><input type="checkbox" id="inclNoPower" checked/> Include unknown capacity</label>
+      <label class="chk" style="margin-top:6px"><input type="checkbox" id="inclNoPower" checked/> Include projects with no capacity figure</label>
     </div>
     <button class="reset" id="reset">Reset filters</button>
   </aside>
@@ -211,9 +211,15 @@ function syncLabels(){
   const m=mwMin();
   document.getElementById('pmnL').textContent = m===0 ? 'Any capacity' : (m>=1000?(m/1000)+' GW+':m+' MW+');
   const n=DATA.filter(d=>d.p!=null&&d.p>=m).length;
-  document.getElementById('pmnCount').textContent = m===0?'':n.toLocaleString()+' projects';
+  document.getElementById('pmnCount').textContent = m===0?'':n.toLocaleString()+' match';
 }
-['search','stateFilter','inclNoYear','inclNoPower','pmn','onlyCBA','onlyBen'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{syncLabels();render();}));
+['search','stateFilter','inclNoYear','inclNoPower','onlyCBA','onlyBen'].forEach(id=>document.getElementById(id).addEventListener('input',()=>{syncLabels();render();}));
+// Moving the capacity slider off "Any" hides projects with no capacity figure,
+// so the on-screen count always matches the threshold. Sliding back to "Any" restores them.
+document.getElementById('pmn').addEventListener('input',()=>{
+  document.getElementById('inclNoPower').checked = (mwMin()===0);
+  syncLabels(); render();
+});
 // If a benefits filter is switched on while no status is selected, re-enable all statuses so results are visible.
 ['onlyCBA','onlyBen'].forEach(id=>document.getElementById(id).addEventListener('change',e=>{
   if(e.target.checked && statusDiv.querySelectorAll('input:checked').length===0){
@@ -221,8 +227,11 @@ function syncLabels(){
   }
 }));
 statusDiv.addEventListener('change',render);
-ymn.addEventListener('input',()=>{if(+ymn.value>+ymx.value)ymx.value=ymn.value;syncLabels();render();});
-ymx.addEventListener('input',()=>{if(+ymx.value<+ymn.value)ymn.value=ymx.value;syncLabels();render();});
+function syncYearInclusion(){
+  document.getElementById('inclNoYear').checked = (+ymn.value===yMin && +ymx.value===yMax);
+}
+ymn.addEventListener('input',()=>{if(+ymn.value>+ymx.value)ymx.value=ymn.value;syncYearInclusion();syncLabels();render();});
+ymx.addEventListener('input',()=>{if(+ymx.value<+ymn.value)ymn.value=ymx.value;syncYearInclusion();syncLabels();render();});
 document.getElementById('reset').addEventListener('click',()=>{
   document.getElementById('search').value='';stateSel.value='';
   statusDiv.querySelectorAll('input').forEach(i=>i.checked=true);
