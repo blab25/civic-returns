@@ -48,7 +48,7 @@ One row = one data center project. Some large campuses appear as multiple rows (
 | **Workforce programs** | Training/education programs tied to the project (e.g., datacenter academies). |
 | **Infrastructure commitments** | Roads, water, grid, or public-facility commitments funded by the developer. |
 | **Community opposition** | Documented opposition: lawsuits, petitions, contested hearings, moratorium fights. |
-| **Formal CBA?** | Strict `Yes`/`No`. `Yes` requires a signed community benefits agreement meeting **all six criteria**: (1) legally enforceable contract; (2) defined community-side signatory with standing; (3) specific, measurable commitments; (4) governance/reporting/oversight mechanisms; (5) remedies for non-performance; (6) negotiated before approvals were granted. City-signed CBAs qualify; tax abatements, development agreements, MOAs, IRB riders, and voluntary grant programs do not. |
+| **Formal CBA?** | Strict `Yes`/`No`. `Yes` requires a signed community benefits agreement meeting **all six criteria**: (1) legally enforceable contract; (2) defined community-side signatory with standing; (3) specific, measurable commitments; (4) governance/reporting/oversight mechanisms; (5) remedies for non-performance; (6) negotiated before approvals were granted. City-signed CBAs qualify; tax abatements, development agreements, MOAs, IRB riders, and voluntary grant programs do not. Flagged **per project**, consistent with one row = one project. A single agreement document can cover several projects — the four `Yes` rows derive from two agreements (Lancaster, PA covers three projects; St. Louis covers one); the source column links the governing document for each. |
 
 ## Audit columns
 

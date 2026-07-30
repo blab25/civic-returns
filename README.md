@@ -10,7 +10,7 @@ This dataset documents **1,185 US data center projects** across 44 states — th
 - **$1.04 trillion** in documented capital investment (284 projects with disclosed figures)
 - **169.8 GW** of confirmed power capacity (681 projects with confirmed figures; estimates and verified "not disclosed" status tracked separately)
 - **641 projects** with researched community-benefits documentation
-- **Only 4 projects — 0.3% — have a formal, enforceable community benefits agreement** (CoreWeave/Lancaster PA ×3 and the St. Louis Armory project), and none was negotiated with an independent community-side signatory
+- **Only 4 projects — 0.3% — are covered by a formal, enforceable community benefits agreement**: three data center developments in Lancaster, PA (covered by a single city-negotiated CBA, demonstrating that one municipal agreement can protect multiple projects) and the St. Louis Armory project. Both agreements were signed by city government rather than an independent community coalition
 - The dominant model is **discretionary corporate giving**: revocable grant programs, not enforceable commitments
 
 ## What's in this repository
@@ -29,7 +29,7 @@ This dataset documents **1,185 US data center projects** across 44 states — th
 
 The dataset is free to use for any purpose with attribution (CC BY 4.0). Suggested citation:
 
-> Civic Returns, *US Data Centers & Community Benefits Dataset* (2026). https://github.com/[blab25]/civic-returns
+> Civic Returns, *US Data Centers & Community Benefits Dataset* (2026). https://github.com/[your-username]/civic-returns
 
 Key conventions to understand before analysis (full details in the data dictionary):
 
