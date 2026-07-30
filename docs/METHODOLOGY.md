@@ -25,7 +25,7 @@ The dataset has undergone systematic verification passes (most recently July 202
 4. **Formal CBA classification** — every claimed "community benefits agreement" was tested against a strict six-criterion definition (enforceable contract; community-side signatory; specific measurable commitments; governance mechanisms; remedies; negotiated pre-approval). Several widely reported "CBAs" (development agreements, MOAs, IRB riders) were classified No with reasons documented. **Counting convention:** the `Formal CBA?` flag is applied per project, consistent with the dataset's unit of analysis (one row = one project). The four `Yes` projects derive from two agreement documents: the City of Lancaster, PA CBA covers three data center developments across two campuses, and the St. Louis Armory CBA covers one. Headline figures therefore report **4 covered projects**; anyone counting distinct agreement documents should report 2. Both readings are supported by the source column, which links the underlying agreement for each row.
 5. **Ongoing automated audit** — a daily process re-verifies ~10 rows across all columns, stamps a "Last audited" date, and appends every change with its source to a Change Log sheet.
 
-## Coverage statistics (July 2026)
+## Coverage statistics (July 2026, n = 1,187 projects)
 
 | Field | Coverage |
 |---|---|

@@ -2,14 +2,14 @@
 
 **The first open dataset tracking what US communities actually receive from the data center boom.**
 
-This dataset documents **1,185 US data center projects** across 44 states — their status, power capacity, capital investment, and, uniquely, their **community benefits**: what developers committed to host communities, whether those commitments are enforceable, and where communities fought back.
+This dataset documents **1,187 US data center projects** across 44 states — their status, power capacity, capital investment, and, uniquely, their **community benefits**: what developers committed to host communities, whether those commitments are enforceable, and where communities fought back.
 
 ## Headline findings (July 2026)
 
-- **1,185 projects tracked**: 596 operational, 97 under construction, 486 planned, 6 cancelled
-- **$1.04 trillion** in documented capital investment (284 projects with disclosed figures)
-- **169.8 GW** of confirmed power capacity (681 projects with confirmed figures; estimates and verified "not disclosed" status tracked separately)
-- **641 projects** with researched community-benefits documentation
+- **1,187 projects tracked**: 596 operational, 97 under construction, 488 planned, 6 cancelled
+- **$1.05 trillion** in documented capital investment (286 projects with disclosed figures)
+- **171.0 GW** of confirmed power capacity (683 projects with confirmed figures; estimates and verified "not disclosed" status tracked separately)
+- **657 projects** with researched community-benefits documentation
 - **Only 4 projects — 0.3% — are covered by a formal, enforceable community benefits agreement**: three data center developments in Lancaster, PA (covered by a single city-negotiated CBA, demonstrating that one municipal agreement can protect multiple projects) and the St. Louis Armory project. Both agreements were signed by city government rather than an independent community coalition
 - The dominant model is **discretionary corporate giving**: revocable grant programs, not enforceable commitments
 
