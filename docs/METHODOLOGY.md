@@ -32,12 +32,16 @@ The dataset has undergone systematic verification passes (most recently July 202
 | Project name, status, state | 100% |
 | Coordinates | 96% |
 | Building square footage | ~82% |
-| Power capacity — confirmed figure | 57% |
-| Power capacity — confirmed + estimate or verified "not disclosed" | 75% |
+| Power capacity — confirmed figure | 58% (687 projects) |
+| Power capacity — estimate only | 8% (99) |
+| Power capacity — researched, **not published by operator** | 12% (139) |
+| Power capacity — not yet researched | 22% (262) |
 | Land acres | ~60% |
 | Community benefits researched | 54% (100% of hyperscale operators) |
 | Operating year | 39% |
 | CapEx | 24% |
+
+**Capacity disclosure is itself a finding.** Of the 500 projects without a confirmed megawatt figure, 139 have been researched and simply have no publicly disclosed capacity — the operator has never published one — and 99 have only a range or campus-level figure. The explorer lets users filter on these four states directly.
 
 **Blank cells mean "not yet researched," never "zero" or "none."** Researched absences are recorded explicitly ("Not disclosed", "No site-specific package documented").
 
