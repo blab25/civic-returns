@@ -4,12 +4,12 @@
 
 This dataset documents **1,187 US data center projects** across 44 states — their status, power capacity, capital investment, and, uniquely, their **community benefits**: what developers committed to host communities, whether those commitments are enforceable, and where communities fought back.
 
-## Headline findings (July 2026)
+## Headline findings (August 2026)
 
-- **1,187 projects tracked**: 596 operational, 97 under construction, 488 planned, 6 cancelled
-- **$1.05 trillion** in documented capital investment (286 projects with disclosed figures)
-- **171.4 GW** of confirmed power capacity across 687 projects. Of the rest: 99 have estimate-only figures, **139 have been researched and have no publicly disclosed capacity at all**, and 262 are not yet researched — a distinction the explorer lets you filter on
-- **657 projects** with researched community-benefits documentation
+- **1,187 projects tracked**: 603 operational, 108 under construction, 462 planned, 14 cancelled
+- **$1.08 trillion** in documented capital investment (294 projects with disclosed figures)
+- **173.3 GW** of confirmed power capacity across 714 projects. Of the rest: 121 have estimate-only figures, **215 have been researched and have no publicly disclosed capacity at all**, and 137 are not yet researched — a distinction the explorer lets you filter on
+- **743 projects** with researched community-benefits documentation
 - **Only 4 projects — 0.3% — are covered by a formal, enforceable community benefits agreement**: three data center developments in Lancaster, PA (covered by a single city-negotiated CBA, demonstrating that one municipal agreement can protect multiple projects) and the St. Louis Armory project. Both agreements were signed by city government rather than an independent community coalition
 - The dominant model is **discretionary corporate giving**: revocable grant programs, not enforceable commitments
 
