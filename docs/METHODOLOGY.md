@@ -2,7 +2,9 @@
 
 ## Scope
 
-US data center projects — operational, under construction, planned, and cancelled — with an emphasis on hyperscale and campus-scale development and on the **community dimension**: benefits, agreements, opposition, and enforceability. Retail colocation is included but not exhaustively; the dataset does not attempt to enumerate every small colocation suite in every metro.
+US data center projects — operational, under construction, planned, and cancelled — with an emphasis on hyperscale and campus-scale development and on the **community dimension**: benefits, agreements, opposition, and enforceability.
+
+**Unit of analysis: one row = one project or campus.** This is the unit communities negotiate over, and it is why this dataset's total (1,204) is smaller than counts published by commercial trackers, which typically enumerate individual buildings, facilities or colocation suites — a single campus here can be five or ten entries there. Retail colocation, enterprise server rooms and small edge/telecom facilities are not exhaustively included; every row requires a citable public source. Where public records themselves track a campus building-by-building (common in Northern Virginia permit data), those buildings appear as separate rows.
 
 ## Sources
 
@@ -23,25 +25,25 @@ The dataset has undergone systematic verification passes (most recently July 202
 2. **Capacity audit** — confirmed figures separated from estimates and from verified "not disclosed" cases (see Data conventions). Renewable-energy commitments were systematically excluded from capacity fields.
 3. **Community benefits research** — all hyperscale operators' projects were researched for documented benefits; entries record dollar figures and cite sources, and explicitly distinguish discretionary corporate giving from enforceable agreements. Absence claims ("no package documented") reflect actual research, not missing research.
 4. **Formal CBA classification** — every claimed "community benefits agreement" was tested against a strict six-criterion definition (enforceable contract; community-side signatory; specific measurable commitments; governance mechanisms; remedies; negotiated pre-approval). Several widely reported "CBAs" (development agreements, MOAs, IRB riders) were classified No with reasons documented. **Counting convention:** the `Formal CBA?` flag is applied per project, consistent with the dataset's unit of analysis (one row = one project). The four `Yes` projects derive from two agreement documents: the City of Lancaster, PA CBA covers three data center developments across two campuses, and the St. Louis Armory CBA covers one. Headline figures therefore report **4 covered projects**; anyone counting distinct agreement documents should report 2. Both readings are supported by the source column, which links the underlying agreement for each row.
-5. **Ongoing automated audit** — a daily process re-verifies ~20 rows across all columns, stamps a "Last audited" date, and appends every change with its source to a Change Log sheet. As of this publish (August 2026), the audit has processed 448 of 1,194 rows since the “Last audited” column was introduced.
+5. **Ongoing automated audit** — a daily process re-verifies ~20 rows across all columns, stamps a "Last audited" date, and appends every change with its source to a Change Log sheet. As of this publish (August 2026), the audit has processed all 1,204 rows at least once, logging 3,440 sourced changes.
 
-## Coverage statistics (August 2026, n = 1,194 projects)
+## Coverage statistics (August 2026, n = 1,204 projects)
 
 | Field | Coverage |
 |---|---|
 | Project name, status, state | 100% |
-| Coordinates | 96% |
-| Building square footage | ~82% |
-| Power capacity — confirmed figure | 62% (737 projects) |
-| Power capacity — estimate only | 13% (152) |
-| Power capacity — researched, **not published by operator** | 20% (243) |
-| Power capacity — not yet researched | 5% (62) |
-| Land acres | ~61% |
-| Community benefits researched | 68% (100% of hyperscale operators) |
-| Operating year | 47% |
-| CapEx | 26% |
+| Coordinates | 95% |
+| Building square footage | ~84% |
+| Power capacity — confirmed figure | 62% (749 projects) |
+| Power capacity — estimate only | 14% (173) |
+| Power capacity — researched, **not published by operator** | 21% (254) |
+| Power capacity — not yet researched | 2% (28) |
+| Land acres | ~65% |
+| Community benefits researched | 88% (100% of hyperscale operators) |
+| Operating year | 57% |
+| CapEx | 30% |
 
-**Capacity disclosure is itself a finding.** Of the 457 projects without a confirmed megawatt figure, 243 have been researched and simply have no publicly disclosed capacity — the operator has never published one — and 152 have only a range or campus-level figure. The explorer lets users filter on these four states directly.
+**Capacity disclosure is itself a finding.** Of the 455 projects without a confirmed megawatt figure, 254 have been researched and simply have no publicly disclosed capacity — the operator has never published one — and 173 have only a range or campus-level figure. The explorer lets users filter on these four states directly.
 
 **Blank cells mean "not yet researched," never "zero" or "none."** Researched absences are recorded explicitly ("Not disclosed", "No site-specific package documented").
 

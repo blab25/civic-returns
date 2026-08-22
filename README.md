@@ -2,16 +2,27 @@
 
 **The first open dataset tracking what US communities actually receive from the data center boom.**
 
-This dataset documents **1,194 US data center projects** across 44 states — their status, power capacity, capital investment, and, uniquely, their **community benefits**: what developers committed to host communities, whether those commitments are enforceable, and where communities fought back.
+This dataset documents **1,204 US data center projects** across 44 states — their status, power capacity, capital investment, and, uniquely, their **community benefits**: what developers committed to host communities, whether those commitments are enforceable, and where communities fought back.
 
 ## Headline findings (August 2026)
 
-- **1,194 projects tracked**: 609 operational, 135 under construction, 430 planned, 20 cancelled
-- **$1.32 trillion** in documented capital investment (309 projects with disclosed figures)
-- **179.0 GW** of confirmed power capacity across 737 projects. Of the rest: 152 have estimate-only figures, **243 have been researched and have no publicly disclosed capacity at all**, and only 62 remain unresearched — a distinction the explorer lets you filter on
-- **815 projects** with researched community-benefits documentation
+- **1,204 projects tracked**: 617 operational, 156 under construction, 407 planned, 24 cancelled
+- **$1.40 trillion** in documented capital investment (363 projects with disclosed figures)
+- **177.5 GW** of confirmed power capacity across 749 projects. Of the rest: 173 have estimate-only figures, **254 have been researched and have no publicly disclosed capacity at all**, and just 28 remain unresearched — a distinction the explorer lets you filter on
+- **1,061 projects** with researched community-benefits documentation
 - **Only 4 projects — 0.3% — are covered by a formal, enforceable community benefits agreement**: three data center developments in Lancaster, PA (covered by a single city-negotiated CBA, demonstrating that one municipal agreement can protect multiple projects) and the St. Louis Armory project. Both agreements were signed by city government rather than an independent community coalition
 - The dominant model is **discretionary corporate giving**: revocable grant programs, not enforceable commitments
+
+## What counts as a "project" — and why this total differs from industry trackers
+
+**One row = one data center project or campus**, the unit that communities actually negotiate over. Commercial trackers (DatacenterDynamics, datacentermap, DC Byte and similar) generally count **individual buildings, facilities or colocation suites**, so a single campus listed once here may appear five or ten times in their totals. That difference accounts for most of the gap between 1,204 and the larger numbers published elsewhere.
+
+**Included:** hyperscale and campus-scale developments; projects at every stage — operational, under construction, planned and cancelled; any project whose siting, permitting, incentives or community impact are publicly documented.
+
+**Not exhaustively included:** retail colocation suites, enterprise server rooms, small edge and telecom facilities, and individual buildings within a campus that aren't separately documented in public records.
+
+Every row requires a citable public source. This dataset optimises for **community accountability**, not for a complete census of server floorspace: a facility with no public record gives a community nothing to hold anyone to. Where public records do track a campus building-by-building (as in parts of Northern Virginia), those appear as separate rows — see the data dictionary for how granularity is handled.
+
 
 ## What's in this repository
 
