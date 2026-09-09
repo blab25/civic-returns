@@ -142,8 +142,21 @@ const ymn=document.getElementById('ymn'),ymx=document.getElementById('ymx');
 [ymn,ymx].forEach(el=>{el.min=yMin;el.max=yMax;el.step=1});
 ymn.value=yMin;ymx.value=yMax;
 const map=L.map('map',{scrollWheelZoom:true}).setView([39.5,-97],4);
-const TILE={dark:'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',light:'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'};
-let tileLayer=L.tileLayer(TILE.dark,{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(map);
+// Esri Canvas basemaps: free, no API key required, and available in light and dark.
+const TILE={
+  dark:'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+  light:'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}'
+};
+const TILE_ATTR='Tiles &copy; Esri &mdash; Esri, HERE, Garmin, &copy; OpenStreetMap contributors';
+let tileLayer=L.tileLayer(TILE.dark,{attribution:TILE_ATTR,maxZoom:16}).addTo(map);
+// If Esri is unreachable, fall back to standard OpenStreetMap tiles (also keyless).
+let tileFallbackUsed=false;
+tileLayer.on('tileerror',()=>{
+  if(tileFallbackUsed) return; tileFallbackUsed=true;
+  map.removeLayer(tileLayer);
+  tileLayer=L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+    {attribution:'&copy; OpenStreetMap contributors',maxZoom:18}).addTo(map);
+});
 const layer=L.layerGroup().addTo(map);
 const legend=L.control({position:'bottomright'});
 legend.onAdd=function(){const div=L.DomUtil.create('div','legend');
@@ -260,7 +273,7 @@ const btn=document.getElementById('themebtn');
 function applyTheme(t){
   if(t==='light'){document.documentElement.setAttribute('data-theme','light'); btn.innerHTML='\u263D Dark';}
   else {document.documentElement.removeAttribute('data-theme'); btn.innerHTML='\u2600 Light';}
-  if(typeof tileLayer!=='undefined'){ tileLayer.setUrl(t==='light'?TILE.light:TILE.dark); }
+  if(typeof tileLayer!=='undefined' && !tileFallbackUsed){ tileLayer.setUrl(t==='light'?TILE.light:TILE.dark); }
   try{localStorage.setItem('cr-theme',t);}catch(e){}
   COLORS=C();
   document.querySelectorAll('.statdot').forEach(el=>{el.style.color=C()[el.dataset.s];});
