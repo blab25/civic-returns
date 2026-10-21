@@ -27,7 +27,7 @@ Create a free account at zenodo.org → New upload → attach `data/us_data_cent
 Lead with the finding, not the dataset. Suggested angle:
 
 > **America is building $1 trillion of data centers. Communities have enforceable agreements for 0.3% of them.**
-> Of 1,185 tracked US data center projects, exactly 4 have a formal community benefits agreement — and none was negotiated with an independent community coalition at the table. The rest of the "community benefits" are discretionary corporate giving, revocable at any time. Explore the map, download the data.
+> Of 1,213 tracked US data center projects, exactly 4 have a formal community benefits agreement — and none was negotiated with an independent community coalition at the table. The rest of the "community benefits" are discretionary corporate giving, revocable at any time. Explore the map, download the data.
 
 Include: 3–4 headline stats, one map screenshot, the explorer link, the repo link, the corrections form link.
 
